@@ -55,7 +55,7 @@ const PAGES = [
   { type: 'image',       src: 'images/46.png', alt: 'Joke 46: What do cats play at a party? Meowsical chairs.' },
   { type: 'image',       src: 'images/47.png', alt: 'Joke 47: Where do sharks go for holiday? Finland.' },
   { type: 'image',       src: 'images/48.png', alt: 'Joke 48: What food can you eat in the bath? Showerma.' },
-  { type: 'placeholder', num: 49, setup: 'How many tickles does it take to make an octopus laugh?', punchline: 'Ten-tickles.' },
+  { type: 'image',       src: 'images/49.png', alt: 'Joke 49: How many tickles does it take to make an octopus laugh? Ten-tickles.' },
   { type: 'image',       src: 'images/50.png', alt: 'Joke 50: If Abu Dhabi was one big restaurant, what would it be called? Abu Dhaba.' },
 
   { type: 'closing' },
