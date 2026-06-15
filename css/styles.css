@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@400;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream: #FBF3E0;
+  --gold:  #E8B23A;
+  --ink:   #2A2118;
+  --gold-light: #F5D57A;
+}
+
+html, body {
+  height: 100%;
+  background: var(--ink);
+  color: var(--ink);
+  font-family: 'Nunito', sans-serif;
+  overflow: hidden;
+  touch-action: none;
+}
+
+/* ── Progress bar ── */
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 4px;
+  background: var(--gold);
+  transition: width 0.2s ease;
+  z-index: 100;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #progress-bar { transition: none; }
+}
+
+/* ── Page counter ── */
+#counter {
+  position: fixed;
+  top: 10px; left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(251,243,224,0.85);
+  letter-spacing: 0.05em;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* ── Nav buttons ── */
+.nav-btn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(232,178,58,0.85);
+  border: none;
+  border-radius: 50%;
+  width: 44px; height: 44px;
+  font-size: 1.2rem;
+  color: var(--ink);
+  cursor: pointer;
+  z-index: 100;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s, opacity 0.15s;
+}
+
+.nav-btn:hover  { background: var(--gold); }
+.nav-btn:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+.nav-btn:disabled { opacity: 0.2; cursor: default; }
+
+#btn-prev { left: 8px; }
+#btn-next { right: 8px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-btn { transition: none; }
+}
+
+/* ── Flipbook viewport ── */
+#book {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* ── Every page ── */
+.page {
+  position: absolute;
+  inset: 0;
+  display: none;
+  background: var(--cream);
+}
+
+.page.active { display: flex; }
+
+/* ── Image pages ── */
+.page-image {
+  align-items: center;
+  justify-content: center;
+}
+
+.page-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── Cover page ── */
+.page-cover {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  gap: 1rem;
+  background: var(--cream);
+}
+
+.cover-trophy {
+  font-size: clamp(4rem, 20vw, 7rem);
+  line-height: 1;
+}
+
+.cover-title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(1.8rem, 7vw, 3.5rem);
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1.1;
+  text-shadow: 2px 2px 0 rgba(42,33,24,0.12);
+}
+
+.cover-subtitle {
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(1.1rem, 4.5vw, 2rem);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.cover-byline {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.85rem, 3vw, 1.2rem);
+  font-weight: 600;
+  color: rgba(42,33,24,0.6);
+  letter-spacing: 0.04em;
+}
+
+.cover-divider {
+  width: 60px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+/* ── Placeholder joke pages ── */
+.page-placeholder {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.placeholder-badge {
+  width: 52px; height: 52px;
+  background: var(--gold);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+
+.placeholder-setup {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1.1rem, 4.5vw, 1.8rem);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.placeholder-punchline {
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(1.2rem, 5vw, 2rem);
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.placeholder-star { font-size: 1.5rem; }
+
+/* ── Closing page ── */
+.page-closing {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  gap: 1.2rem;
+}
+
+.closing-trophy { font-size: clamp(3.5rem, 15vw, 6rem); }
+
+.closing-title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(1.4rem, 5.5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.closing-score {
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(2rem, 9vw, 4rem);
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.closing-label {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.85rem, 3vw, 1.1rem);
+  font-weight: 600;
+  color: rgba(42,33,24,0.55);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.closing-msg {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+  font-weight: 600;
+  color: var(--ink);
+  max-width: 280px;
+  line-height: 1.4;
+}
+
+/* ── Slide animation (skipped if prefers-reduced-motion) ── */
+@media (prefers-reduced-motion: no-preference) {
+  .page { transition: opacity 0.18s ease; }
+  .page.entering { animation: fadeIn 0.18s ease forwards; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
