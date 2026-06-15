@@ -74,10 +74,10 @@ const progress = document.getElementById('progress-bar');
 // object-fit:contain means the image content may be letterboxed inside the page div.
 // We compute the rendered image rect and position the overlay precisely.
 
-const BADGE_X = 0.600; // left edge of badge as fraction of image width
-const BADGE_Y = 0.035; // top edge of badge as fraction of image height
-const BADGE_W = 0.175; // badge width as fraction of image width
-const BADGE_H = 0.130; // badge height as fraction of image height
+const BADGE_X = 0.680; // left edge of badge as fraction of image width
+const BADGE_Y = 0.090; // top edge of badge as fraction of image height
+const BADGE_W = 0.155; // badge width as fraction of image width
+const BADGE_H = 0.135; // badge height as fraction of image height
 
 function placeBadge(img, overlay) {
   if (!img.naturalWidth) return;
