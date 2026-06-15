@@ -16,7 +16,7 @@ const PAGES = [
   { type: 'image',       src: 'images/07.png', alt: 'Joke 7: Why did the computer go to the doctor? Because it caught a virus.' },
   { type: 'image',       src: 'images/08.png', alt: 'Joke 8: Why don\'t calendars ever get lonely? Because they have so many dates.' },
   { type: 'image',       src: 'images/09.png', alt: 'Joke 9: Why did the stadium get so hot? Because all the fans left.' },
-  { type: 'placeholder', num: 10, setup: 'Why did a boy carry a ladder to school?', punchline: 'Because he wanted to go to high school.' },
+  { type: 'image',       src: 'images/10.png', alt: 'Joke 10: Why did a boy carry a ladder to school? Because he wanted to go to high school.' },
   { type: 'image',       src: 'images/11.png', alt: 'Joke 11: Why don\'t eggs tell jokes? Because they\'d crack up.' },
   { type: 'image',       src: 'images/12.png', alt: 'Joke 12: Why did the bicycle fall over? Because it was two-tired.' },
   { type: 'image',       src: 'images/13.png', alt: 'Joke 13: Why did the math book look so sad? Because it had so many problems.' },

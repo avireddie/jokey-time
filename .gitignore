@@ -1,2 +1,14 @@
 .DS_Store
 *.DS_Store
+# Raw source images (renamed copies live in images/)
+ChatGPT Image*.png
+Birds_1.png
+Bluetooth_3.png
+Doctor_7.png
+Skeletin_6.png
+Stadiums_9.png
+calendar_8.png
+golf_4.png
+teacher_5.png
+Highschool_10.png
+.claude/
